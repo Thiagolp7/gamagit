@@ -1,8 +1,14 @@
-import { AppRoutes } from "./routes"
+import { BrowserRouter } from "react-router-dom"
+import { GithubUserProvider } from "./hooks/useGithubUser"
+import AppRoutes from "./routes"
 
 function App() {
   return (
-    <AppRoutes/>
+    <BrowserRouter>
+      <GithubUserProvider>
+        <AppRoutes/>
+      </GithubUserProvider>
+    </BrowserRouter>
   )
 }
 
