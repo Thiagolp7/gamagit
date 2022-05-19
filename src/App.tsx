@@ -1,9 +1,8 @@
+import { AppRoutes } from "./routes"
 
 function App() {
   return (
-    <>
-      <h1>Hello Vite!</h1>
-    </>
+    <AppRoutes/>
   )
 }
 
