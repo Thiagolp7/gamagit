@@ -1,20 +1,15 @@
-import { useEffect, useState } from "react";
+import { SearchBar } from "../../components/SearchBar";
+import { GamaLogo } from "../../components/Logo/GamaAcademyLogo";
+import { Container } from "./styles";
 import { useGithubUser } from "../../hooks/useGithubUser";
-import { githubApi } from "../../services/githubApi"
+import { FormEvent } from "react";
 
 
 export function Home(){
-  const { userData, getUserApiData } = useGithubUser();
-  const user = 'thiagolp7'
-
-  useEffect(() => {
-    getUserApiData(user)
-  }
-  , [])
-
   return (
-    <>
-      <h1>Github user: {userData.name}</h1>
-    </>
+    <Container>
+      <GamaLogo/>
+      <SearchBar/>
+    </Container>
   )
 }

@@ -34,23 +34,21 @@ export function GithubUserProvider({children}: GithubUserProviderProps){
   const [userRepositories, setUserRepositories] = useState<IUserRepositorie[]>([] as IUserRepositorie[] )
 
   async function getUserApiData(user: string){
-    const apiData = await githubApi.get(`/${user}`)
+    const response = await githubApi.get(`/${user}`)
     .then(res => res.data);
 
     const userData:IUserData = {
-      name: apiData.name, 
-      login: apiData.login,
-      avatar_url: apiData.avatar_url,
-      repos_url: apiData.repos_url,
-      email: apiData.email,
-      blog: apiData.blog,
-      bio: apiData.bio
+      name: response.name, 
+      login: response.login,
+      avatar_url: response.avatar_url,
+      repos_url: response.repos_url,
+      email: response.email,
+      blog: response.blog,
+      bio: response.bio
     }
 
     setUserData(userData)
   } 
-
-
 
   return (
     <GithubUserContext.Provider
