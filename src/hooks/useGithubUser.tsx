@@ -24,7 +24,7 @@ interface GithubUserProviderProps {
 interface GithubUserContextData {
   userData: IUserData;
   userRepositories: IUserRepositorie[];
-  getUserApiData: (user: string) => Promise<void>;
+  getUserApiData: (userName: string) => Promise<void>;
 }
 
 const GithubUserContext = createContext<GithubUserContextData>({} as GithubUserContextData)
@@ -33,21 +33,34 @@ export function GithubUserProvider({children}: GithubUserProviderProps){
   const [userData, setUserData] = useState<IUserData>({} as IUserData)
   const [userRepositories, setUserRepositories] = useState<IUserRepositorie[]>([] as IUserRepositorie[] )
 
-  async function getUserApiData(user: string){
-    const response = await githubApi.get(`/${user}`)
+  async function getUserApiData(userName: string){
+    const userData = await githubApi.get(`/${userName}`)
+    .then(res => res.data);
+    const userRepositories = await githubApi.get(`/${userName}/repos`)
     .then(res => res.data);
 
-    const userData:IUserData = {
-      name: response.name, 
-      login: response.login,
-      avatar_url: response.avatar_url,
-      repos_url: response.repos_url,
-      email: response.email,
-      blog: response.blog,
-      bio: response.bio
+    const user:IUserData = {
+      name: userData.name, 
+      login: userData.login,
+      avatar_url: userData.avatar_url,
+      repos_url: userData.repos_url,
+      email: userData.email,
+      blog: userData.blog,
+      bio: userData.bio
     }
 
-    setUserData(userData)
+    const repositories: IUserRepositorie[] = userRepositories.map(
+      (repo: IUserRepositorie ) => {
+        return { 
+          name: repo.name, 
+          html_url: repo.html_url,
+          description: repo.description 
+        }
+      }
+    )
+
+    setUserData(user);
+    setUserRepositories(repositories);
   } 
 
   return (
