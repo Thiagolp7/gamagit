@@ -37,7 +37,6 @@ export function GithubUserProvider({children}: GithubUserProviderProps){
     const userData = getLocalStorage("@Gamagit:user");
     const userRepositories = getLocalStorage('@Gamagit:repositories');
 
-
     if(userData){
       setUserData(userData);
     } else {
