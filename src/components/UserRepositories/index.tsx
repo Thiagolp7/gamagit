@@ -1,8 +1,11 @@
 import { Container, RepoContainer, RepoList } from "./styles";
 
 import { BiGitBranch } from 'react-icons/bi'
+import { useGithubUser } from "../../hooks/useGithubUser";
 
 export function UserRepositories(){
+  const  { userRepositories } = useGithubUser();
+  
   return (
     <Container>
       <header>
@@ -13,22 +16,22 @@ export function UserRepositories(){
         </span>
       </header>
       <RepoList>
-        <RepoContainer>
-          <a href="" target='_blank'>
-            <div>
-              <h3>Nome do Repo</h3>
-              <p>Descrição</p>
-            </div>
-          </a>
-        </RepoContainer>
-        <RepoContainer>
-          <a href="" target='_blank'>
-            <div>
-              <h3>Nome do Repo</h3>
-              <p>Descrição</p>
-            </div>
-          </a>
-        </RepoContainer>
+        { userRepositories.map((repo) =>{
+          return (
+            <RepoContainer key={repo.name}>
+              <a 
+                href={repo.html_url} 
+                target='_blank'
+                title={`Veja ${repo.name} no Github.`}
+              >
+                <div>
+                  <h3>{repo.name}</h3>
+                  <p>{repo.description}</p>
+                </div>
+              </a>
+           </RepoContainer>
+          )
+        })}
       </RepoList>
     </Container>
   )

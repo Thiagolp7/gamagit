@@ -2,15 +2,14 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
   width: 100%;
-  max-height: 200px;
-  
+  height: 100%;
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   justify-content: center;
   
   position: relative;
+  overflow: hidden;
 
   header {
     padding: 2rem ;
@@ -44,8 +43,13 @@ export const RepoList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem ;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  overflow: auto;
+  position: relative;
+  right: -10px;
 `
-
 
 export const RepoContainer = styled.div`
   display: flex;
@@ -66,6 +70,21 @@ export const RepoContainer = styled.div`
 
     &:hover {
       transform: translate(6px, -6px);
+    }
+
+    div {
+      height: 100%;
+
+      h3 {
+        font-size: 18px;
+        color: var(--green);
+      }
+      
+      p {
+        font-size: 14px;
+        margin-top: 1rem;
+        color: var(--gray-700);
+      }
     }
   }
 `
