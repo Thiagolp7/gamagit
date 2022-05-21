@@ -11,3 +11,22 @@ export const Container = styled.main`
   flex-direction: column;
   gap: 3rem;
 `
+
+export const BackPageBtn = styled.button`
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: all .3s ease-in;
+  align-self: flex-start;
+
+  &:hover {
+    background-color: var(--gray-100);
+  }
+
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--gray-700);
+  }
+`
