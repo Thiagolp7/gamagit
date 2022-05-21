@@ -6,4 +6,8 @@ export const Container = styled.main`
   max-width: 1200px;
   max-height: 100%;
   padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 `

@@ -4,7 +4,6 @@ export const Container = styled.div`
   width: 100%;
   max-height: 200px;
   background-color: var(--white);
-
   padding: 2.5rem;
 
   border-radius: 10px;
@@ -13,8 +12,11 @@ export const Container = styled.div`
   display: flex;
   gap: 3rem;
   align-items: center;
-
+  
   position: relative;
+  --transform: -8px;
+  top: var(--transform);
+  right: var(--transform);
   
   &::after {
     content: '';
@@ -23,11 +25,10 @@ export const Container = styled.div`
     background-color: var(--pink);
     border-radius: inherit;
     position: absolute;
-    bottom: -8px;
-    left: -8px;
+    bottom: var(--transform);
+    left: var(--transform);
     z-index: -1;
   }
-
   
 `
 export const UserAvatar = styled.div`
@@ -47,8 +48,8 @@ export const UserAvatar = styled.div`
 
 export const UserInfo = styled.div`
   align-self: flex-start;
-
   flex: 1;
+
   header {
     display: flex;
     align-items: center;
