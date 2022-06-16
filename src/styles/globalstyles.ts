@@ -6,6 +6,26 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    /* scrollbar style */
+    & {
+      scrollbar-width: auto;
+      scrollbar-color: var(--pink) trasparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: trasparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--pink);
+      border-radius: 10px;
+      border: 3px solid trasparent;
+    }
   }
   
   :root{

@@ -28,20 +28,28 @@ export const Container = styled.div`
     left: var(--transform);
     z-index: -1;
   }
+
+  @media screen and (max-width: 480px) {
+    position: relative;
+  }
   
 `
 export const UserAvatar = styled.div`
   width: 15rem;
-    height: 15rem;
-    background-color: gray;
-    border-radius: 10px;
-    overflow: hidden;
+  height: 15rem;
+  background-color: gray;
+  border-radius: 10px;
+  overflow: hidden;
     
-    img {
-      width: inherit;
-      height: inherit;
-      border-radius: inherit;
-    }
+  img {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  }
+
+  @media screen and (max-width: 480px) {
+    
+  }
 
 `
 

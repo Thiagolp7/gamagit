@@ -51,7 +51,7 @@ export const RepoList = styled.div`
   right: -10px;
 `
 
-export const RepoContainer = styled.div`
+export const RepoCard = styled.div`
   display: flex;
   width: 100%;
   border-radius: 10px;

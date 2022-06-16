@@ -1,8 +1,8 @@
 import { SearchBar } from "../../components/SearchBar";
 import { GamaLogo } from "../../components/Logo/GamaAcademyLogo";
 import { Container } from "./styles";
-import { useGithubUser } from "../../hooks/useGithubUser";
-import { FormEvent } from "react";
+import { SearchResult } from "../../components/SearchResults";
+import { Loading } from "../../components/Loading";
 
 
 export function Home(){
@@ -10,6 +10,8 @@ export function Home(){
     <Container>
       <GamaLogo/>
       <SearchBar/>
+      <Loading/>
+      <SearchResult />
     </Container>
   )
 }

@@ -3,17 +3,19 @@ import { BiSearchAlt } from 'react-icons/bi'
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGithubUser } from "../../hooks/useGithubUser";
+import { apiSearchUser } from "../../services/githubApi";
+import { useGithubSearchUser } from "../../hooks/useGithubSearchUser";
 
 
 export function SearchBar(){
   const [userInput, setUserInput] = useState('');
+  const { searchResults, searchUsers } = useGithubSearchUser();
   const {getUserApiData} = useGithubUser();
   const navigate = useNavigate();
 
-  function handleSearchUser(event: FormEvent){
+  async function handleSearchUser(event:FormEvent){
     event.preventDefault();
-    getUserApiData(userInput);
-    navigate('/user-page', { replace: true });
+    searchUsers(userInput);
   }
 
   return (
