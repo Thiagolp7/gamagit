@@ -9,6 +9,8 @@ export const Container = styled.main`
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 3rem;
 `
 
@@ -29,4 +31,12 @@ export const BackPageBtn = styled.button`
     height: 2.5rem;
     color: var(--gray-700);
   }
+`
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
 `

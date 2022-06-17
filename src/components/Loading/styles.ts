@@ -11,30 +11,41 @@ export const Container = styled.div`
     transition: background-color .3s ease-in;
 
     & + div {
-      margin-left: 5px;
+      margin-left: 8px;
     }
   }
 
   div:nth-child(1){
-    animation: loading .6s infinite;
+    animation: loading .5s alternate infinite;
   }
 
   div:nth-child(2){
-    animation: loading .6s infinite;
-    animation-delay: .2s;
+    animation: loading .5s alternate infinite;
+    animation-delay: .16s;
   }
 
   div:nth-child(3){
-    animation: loading .6s infinite;
-    animation-delay: .4s;
+    animation: loading .5s alternate infinite;
+    animation-delay: .32s;
   }
 
   @keyframes loading {
-    50% {
-      transform: translateY(-13px);
+    from {
+      transform: scaleX(1.25);
     }
-    100% {
-      transform: none;
+    to {
+      transform: translateY(-25px) scale(1);
+    }
+  }
+
+  @media screen and (max-width:480px) {
+    div {
+      width: 10px;
+      height: 10px;
+
+      & + div {
+        margin-left: 5px;
+      }
     }
   }
 `

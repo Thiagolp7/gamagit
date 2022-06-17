@@ -2,7 +2,7 @@ import { Container } from "./styles";
 
 export function Loading(){
   return (
-    <Container>
+    <Container className="loading">
       <div></div>
       <div></div>
       <div></div>

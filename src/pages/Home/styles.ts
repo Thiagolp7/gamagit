@@ -10,11 +10,20 @@ export const Container = styled.main`
   width: 100%;
   height: 100%;
   max-width: 1000px;
-  padding: 3rem 1.5rem;
+  padding: 3rem 2rem;
  
   margin: 0 auto;
 
+  & > a {
+    text-decoration: none;
+  }
+
   @media screen and (max-width:480px) {
     gap: 2.5rem;
+
+    .loading{
+      margin-top: 2.5rem;
+    }
   }
+
 `

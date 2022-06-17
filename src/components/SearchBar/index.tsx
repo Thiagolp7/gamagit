@@ -9,9 +9,7 @@ import { useGithubSearchUser } from "../../hooks/useGithubSearchUser";
 
 export function SearchBar(){
   const [userInput, setUserInput] = useState('');
-  const { searchResults, searchUsers } = useGithubSearchUser();
-  const {getUserApiData} = useGithubUser();
-  const navigate = useNavigate();
+  const { searchUsers } = useGithubSearchUser();
 
   async function handleSearchUser(event:FormEvent){
     event.preventDefault();

@@ -7,12 +7,12 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
-  position: relative;
+
   overflow: hidden;
 
   header {
-    padding: 2rem ;
+    margin: 1rem 2rem 0 ;
+    padding-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,8 +47,6 @@ export const RepoList = styled.div`
   height: 100%;
   padding: 2rem;
   overflow: auto;
-  position: relative;
-  right: -10px;
 `
 
 export const RepoCard = styled.div`

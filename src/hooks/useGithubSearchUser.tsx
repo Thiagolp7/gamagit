@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { apiSearchUser } from "../services/githubApi";
+import { useLoading } from "./useLoading";
 
 interface IUser {
   avatar_url: string;
@@ -21,7 +22,11 @@ const GithubSearchUserContext = createContext<GithubSearchUserData>({} as Github
 export function GithubSeacrhUserProvider({children}: GithubSearchUserProviderProps){
   const [searchResults, setSearchResults] = useState<IUser[]>([] as IUser[]);
 
+  const { setIsLoading } = useLoading();
+
+
   async function searchUsers(userName: string){
+    setIsLoading(true);
     const options = {
       params: {q: userName}
     }
@@ -40,6 +45,9 @@ export function GithubSeacrhUserProvider({children}: GithubSearchUserProviderPro
     })
 
     setSearchResults(searchResults)
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500)
   }
   
   return(

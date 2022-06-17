@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { githubApi } from "../services/githubApi";
+import { useLoading } from "./useLoading";
 
 interface IUserData {
   name: string;
@@ -32,6 +33,7 @@ const GithubUserContext = createContext<GithubUserContextData>({} as GithubUserC
 export function GithubUserProvider({children}: GithubUserProviderProps){
   const [userData, setUserData] = useState<IUserData>({} as IUserData)
   const [userRepositories, setUserRepositories] = useState<IUserRepositorie[]>([] as IUserRepositorie[] )
+  const { setIsLoading } = useLoading();
 
   useEffect(() => {
     const userData = getLocalStorage("@Gamagit:user");
@@ -63,6 +65,7 @@ export function GithubUserProvider({children}: GithubUserProviderProps){
   }
 
   async function getUserApiData(userName: string){
+    setIsLoading(true);
     const userData = await githubApi.get(`/${userName}`)
     .then(res => res.data);
     const userRepositories = await githubApi.get(`/${userName}/repos`)
@@ -92,6 +95,9 @@ export function GithubUserProvider({children}: GithubUserProviderProps){
     setLocalStorage('@Gamagit:user', user)
     setUserRepositories(repositories);
     setLocalStorage('@Gamagit:repositories', repositories)
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500)
   } 
 
   return (
