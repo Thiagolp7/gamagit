@@ -23,6 +23,11 @@ export function UserCard(){
             {userData.login}
           </a>
         </header>
+        { !userData.bio && 
+          !userData.location && 
+          !userData.email &&
+          !userData.blog ? '' 
+          : (
         <UserMoreInfo showMore={showMoreUserInfo}>
           <li>{userData.bio}</li>
           <li>
@@ -49,6 +54,7 @@ export function UserCard(){
             </button>
           </li>
         </UserMoreInfo>
+        )}
       </UserInfo>
     </Container>
   )

@@ -13,7 +13,7 @@ export function UserRepositories(){
         <h2>Repositories</h2>
         <span>
           <BiGitBranch/>
-          30
+          {userRepositories.length}
         </span>
       </header>
       <RepoList>
