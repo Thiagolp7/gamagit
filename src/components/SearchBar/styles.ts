@@ -15,9 +15,10 @@ export const Container = styled.form`
     font-size: 1.8rem;
     position: relative;
 
-    &::placeholder {
+    &::placeholder,
+    &:-moz-placeholder,
+    &::-webkit-input-placeholder {
       color: var(--black);
-      padding: 5rem;
     }
 
     &:focus {

@@ -1,12 +1,15 @@
 import { useGithubUser } from "../../hooks/useGithubUser";
-import { Container, UserAvatar, UserInfo } from "./styles";
+import { Container, UserAvatar, UserInfo, UserMoreInfo } from "./styles";
 
 import { FaGithub } from 'react-icons/fa'
 import { BiEnvelope, BiLink, BiMap } from 'react-icons/bi'
+import { BsArrowBarDown } from 'react-icons/bs'
+import { useState } from "react";
 
 export function UserCard(){
   const { userData } = useGithubUser();
-  
+  const [ showMoreUserInfo, setShowMoreUserInfo ] = useState(false);
+
   return (
     <Container>
       <UserAvatar>
@@ -14,29 +17,38 @@ export function UserCard(){
       </UserAvatar>
       <UserInfo>
         <header>
-          <h2>{userData.name}</h2>
-          <a href={userData.repos_url}> 
+          <h2>{userData.name ?? userData.login}</h2>
+          <a href={userData.html_url} target="_blank"> 
             <FaGithub/>
             {userData.login}
           </a>
         </header>
-        <ul>
+        <UserMoreInfo showMore={showMoreUserInfo}>
           <li>{userData.bio}</li>
           <li>
-            <BiMap/>
-            Rio de Janeiro - RJ, Brasil.
+            { userData.location && <BiMap/>}
+            { userData.location ?? userData.location}
           </li>
           <li>
-            <BiEnvelope/>
-            thiagolp.dev@gmail.com
-            </li>
-          <li>
-            <BiLink/>
-            <a href="https://www.linkedin.com/in/thiagoluizps/" target="_blank">
-              https://www.linkedin.com/in/thiagoluizps/
-            </a>
+            { userData.email &&  <BiEnvelope/>}
+            { userData.email ?? userData.email}
           </li>
-        </ul>
+          <li>
+            { userData.blog &&  <BiLink/>}
+            { 
+              userData.blog 
+              ? <a href={userData.blog} target="_blank">
+                  { userData.blog }
+                </a>
+              : ''
+            }
+          </li>
+          <li>
+            <button onClick={(e) => {setShowMoreUserInfo(!showMoreUserInfo)}}>
+              <BsArrowBarDown/>
+            </button>
+          </li>
+        </UserMoreInfo>
       </UserInfo>
     </Container>
   )

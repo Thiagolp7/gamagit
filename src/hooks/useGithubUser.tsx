@@ -6,10 +6,11 @@ interface IUserData {
   name: string;
   login: string;
   avatar_url: string;
-  repos_url: string;
+  html_url: string;
   email: string;
   blog: string;
   bio: string;
+  location: string;
 }
 
 interface IUserRepositorie {
@@ -75,10 +76,11 @@ export function GithubUserProvider({children}: GithubUserProviderProps){
       name: userData.name, 
       login: userData.login,
       avatar_url: userData.avatar_url,
-      repos_url: userData.repos_url,
+      html_url: userData.html_url,
       email: userData.email,
       blog: userData.blog,
-      bio: userData.bio
+      bio: userData.bio,
+      location: userData.location
     }
 
     const repositories: IUserRepositorie[] = userRepositories.map(
