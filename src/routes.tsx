@@ -8,7 +8,7 @@ const AppRoutes = ():JSX.Element => {
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/user-page" element={<UserPage/>}/>
-      <Route path="/*" element={<NotFound/>}/>
+      <Route path="*" element={<NotFound/>}/>
     </Routes>
   )
 }
