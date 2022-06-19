@@ -44,8 +44,8 @@ http://localhost:3000/
 ## :hammer_and_wrench: Tecnologias
 
 <div align="left">
-  <a href="https://nextjs.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next JS Badge"/>
+  <a href="https://reactjs.org/" target="_blank">
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React JS Badge"/>
   </a>
    <a href="https://styled-components.com/" target="_blank">
     <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" alt="Styled Components Badge"/>
@@ -55,4 +55,3 @@ http://localhost:3000/
   </a>
  
 </div>
-
