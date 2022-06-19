@@ -1,20 +1,19 @@
-# 👻 GamaGit
+# :hand GamaGit
 > - 👉 Desafio do Iuri Silva - Desafio 05
 > - 🖥️ Layout - Desafio 05: https://www.figma.com/file/Yb9IBH56g7T1hdIyZ3BMNO/Desafios---Codel%C3%A2ndia?node-id=5854%3A2
 > - 🔗 Deploy: https://a-viagem-de-chihiro.vercel.app/
 
-
-
 https://user-images.githubusercontent.com/92824127/174497777-2bbc0c5e-7a98-46b4-91d5-f94a1ced1379.mp4
 
-
-
 ---
-## 📌 Ajustes e melhorias
-
+## 📌 Implementações
+- [x] Campo de busca de users, pesquisa os usuário e armazena em um hook com context api que disponibiliza a consulta feita para toda aplicação.
+- [x] Criar rotas com react-route-dom.
+- [x] Caminho /Home : barra de pesquisa para procurar usuário.
+- [x] Caminho /user-page : mostra infos como Bio, desc, local, email e foto e uma lista abaixo com todos repositório e link para cada um no github.
 - [x] Responsividade para diversas telas.
-- [x] Animações
-
+- [x] Tela de loading.
+- [x] Tela de not found. 
 
 --- 
 ## :hammer_and_wrench: Tecnologias
@@ -58,15 +57,3 @@ cd a-viagem-de-chihiro && npm install && npm run dev
 http://localhost:3000/
 ```
 
-
-
-
-
-
-
-## Implementações:
-
-- [] Campo de busca de users, pesquisa os usuário e armazena em um hook com context api que disponibiliza a consulta feita para toda aplicação.
-- [] Criar rotas com react-route-dom.
-- [] Caminho /Home : barra de pesquisa para procurar usuário.
-- [] Caminho /user-page : mostra infos como Bio, desc, local, email e foto e uma lista abaixo com todos repositório e link para cada um no github.
