@@ -1,10 +1,14 @@
-# 👻 A Viagem de Chihiro
+# 👻 GamaGit
 > - 👉 Desafio do Iuri Silva - Desafio 05
 > - 🖥️ Layout - Desafio 05: https://www.figma.com/file/Yb9IBH56g7T1hdIyZ3BMNO/Desafios---Codel%C3%A2ndia?node-id=5854%3A2
 > - 🔗 Deploy: https://a-viagem-de-chihiro.vercel.app/
 
 
-https://user-images.githubusercontent.com/92824127/160183199-2c3fcf9b-fbbd-4394-b625-155a7f0b3c8f.mp4
+
+
+
+https://user-images.githubusercontent.com/92824127/174497465-fb4da411-9f7e-48ad-bcdc-8350c361704d.mp4
+
 
 
 ---
